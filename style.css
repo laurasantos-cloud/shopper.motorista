@@ -132,6 +132,11 @@ a{color:inherit}
     transform: translateX(0) scale(1);
   }
 
+  .vehicle-title.small {
+  font-size: 42px;
+  line-height: 1.05;
+}
+
   .vehicle-card h3,
   .vehicle-card.featured h3 {
     font-size: 36px;
