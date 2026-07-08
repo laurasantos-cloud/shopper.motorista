@@ -30,22 +30,17 @@ const next = document.querySelector('.carousel-btn.next');
 let active = 1;
 let timer;
 
-function visibleCount(){
-  return window.matchMedia('(max-width: 820px)').matches ? 1 : 3;
-}
-
 function updateCarousel(){
   const total = cards.length;
+  const prevIndex = (active - 1 + total) % total;
+  const nextIndex = (active + 1) % total;
 
   cards.forEach((card, index) => {
-    card.classList.remove('is-active', 'is-prev', 'is-next');
-
-    const prevIndex = (active - 1 + total) % total;
-    const nextIndex = (active + 1) % total;
-
+    card.classList.remove('is-active', 'is-prev', 'is-next', 'is-hidden');
     if (index === active) card.classList.add('is-active');
-    if (index === prevIndex) card.classList.add('is-prev');
-    if (index === nextIndex) card.classList.add('is-next');
+    else if (index === prevIndex) card.classList.add('is-prev');
+    else if (index === nextIndex) card.classList.add('is-next');
+    else card.classList.add('is-hidden');
   });
 
   track.style.transform = 'none';

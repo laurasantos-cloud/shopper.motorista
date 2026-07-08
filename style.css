@@ -1,6 +1,6 @@
 :root{
   --green:#009278;
-  --green-light:#5bc39f;
+  --green-light:#61d1aa;
   --dark:#333338;
   --navy:#171735;
   --muted:#5b5353;
@@ -36,109 +36,199 @@ a{color:inherit}
 @media (max-width:520px){.header-inner{height:74px}.logo{width:132px}.main-nav{top:84px}.hero{padding:52px 0 66px}.hero h1{font-size:44px}.intro{font-size:18px}.hero-text{font-size:22px}.btn-main{width:100%;max-width:330px}.section{padding:62px 0}h2{font-size:42px}.requirements h2{font-size:44px}.card-title{gap:16px;margin-bottom:26px}.card-title h3{font-size:26px}.info-card p{font-size:22px}.green-note{font-size:19px}.benefits h2{font-size:41px}.benefit-card{padding:40px 30px;min-height:390px}.vehicle-card h3,.vehicle-card.featured h3{font-size:40px}.footer h2{font-size:29px}.footer-logo{width:130px}}
 @media (max-width:380px){.hero h1{font-size:38px}.hero-text{font-size:20px}h2{font-size:36px}.requirements h2{font-size:38px}.info-card p{font-size:20px}.benefits h2{font-size:35px}.benefit-card h3{font-size:22px}.benefit-card p{font-size:19px}.vehicle-card h3,.vehicle-card.featured h3{font-size:34px}}
 
+/* Ajustes v3 - revisao fina */
+:root{
+  --green-light:#5bc39f;
+}
+
 .info-card,
 .money-card,
-.vehicle-card {
-  border-color: #5bc39f;
+.vehicle-card,
+.vehicle-card.featured{
+  border-color:#5bc39f;
 }
 
-.hero-photo.frame {
-  border: 10px solid #e5e5e5;
-  background: #e5e5e5;
+.green-note{
+  color:#5bc39f;
 }
 
-.green-note {
-  color: #5bc39f;
+.hero-text br{
+  display:block;
+  content:"";
+  margin-top:10px;
 }
 
-.vehicle-grid {
-  align-items: stretch;
+.photo.hero-frame{
+  border:8px solid #f0f0f0;
+  background:#f0f0f0;
+}
+
+.photo-2.hero-frame{
+  left:128px;
+  top:188px;
+}
+
+.photo-5.hero-frame{
+  right:85px;
+  top:185px;
+}
+
+.vehicle-grid{
+  align-items:stretch;
 }
 
 .vehicle-card,
-.vehicle-card.featured {
-  min-height: 390px;
-  transform: none;
+.vehicle-card.featured{
+  min-height:430px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  transform:none;
+}
+
+.vehicle-card.featured{
+  box-shadow:0 22px 46px rgba(0,0,0,.05);
 }
 
 .vehicle-card h3,
-.vehicle-card.featured h3 {
-  font-size: 38px;
-  line-height: 1.05;
+.vehicle-card.featured h3{
+  font-size:42px;
+  line-height:1.03;
+  min-height:88px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 }
 
-.vehicle-card h3 br {
-  display: none;
+.vehicle-card h3.vehicle-title-small{
+  font-size:36px;
+  letter-spacing:-.03em;
 }
 
-/* Carrossel benefícios estilo profundidade */
-.carousel-wrap {
-  max-width: 980px;
-  overflow: hidden;
+.vehicle-card h3.vehicle-title-small span{
+  white-space:nowrap;
 }
 
-.benefit-track {
-  height: 330px;
-  justify-content: center;
-  gap: 0;
+.vehicle-card ul{
+  flex:1;
 }
 
-.benefit-card {
-  position: absolute;
-  width: 330px;
-  flex: unset;
-  opacity: 0;
-  transform: translateX(0) scale(.78);
-  pointer-events: none;
+.vehicle-card .btn{
+  width:210px;
+  max-width:100%;
+  align-self:center;
+  white-space:nowrap;
+  line-height:1;
 }
 
-.benefit-card.is-active {
-  opacity: 1;
-  transform: translateX(0) scale(1.08);
-  z-index: 4;
-  pointer-events: auto;
+.vehicle-card .btn-main.small{
+  width:210px;
 }
 
-.benefit-card.is-prev {
-  opacity: .72;
-  transform: translateX(-290px) scale(.88);
-  z-index: 2;
+/* Beneficios em carrossel com profundidade */
+.carousel-wrap{
+  max-width:1040px;
+  overflow:visible;
+  min-height:430px;
 }
 
-.benefit-card.is-next {
-  opacity: .72;
-  transform: translateX(290px) scale(.88);
-  z-index: 2;
+.benefit-track{
+  position:relative;
+  height:310px;
+  display:block;
+  transform:none !important;
 }
 
-@media (max-width: 820px) {
-  .benefit-track {
-    height: 430px;
-  }
+.benefit-card{
+  position:absolute;
+  top:8px;
+  left:50%;
+  width:345px;
+  min-height:230px;
+  flex:none;
+  opacity:0;
+  pointer-events:none;
+  transform:translateX(-50%) scale(.75);
+  transition:transform .5s ease, opacity .5s ease, box-shadow .5s ease;
+}
 
+.benefit-card.is-active{
+  opacity:1;
+  z-index:4;
+  pointer-events:auto;
+  transform:translateX(-50%) scale(1.08);
+  box-shadow:0 34px 70px rgba(0,0,0,.14);
+}
+
+.benefit-card.is-prev{
+  opacity:.72;
+  z-index:2;
+  transform:translateX(calc(-50% - 305px)) scale(.88);
+}
+
+.benefit-card.is-next{
+  opacity:.72;
+  z-index:2;
+  transform:translateX(calc(-50% + 305px)) scale(.88);
+}
+
+.benefit-card.is-hidden{
+  opacity:0;
+  z-index:1;
+  transform:translateX(-50%) scale(.72);
+}
+
+.carousel-bg.top{
+  left:190px;
+  right:190px;
+}
+
+.carousel-bg.bottom{
+  left:190px;
+  right:190px;
+  bottom:58px;
+}
+
+.carousel-controls{
+  bottom:54px;
+}
+
+@media (max-width:1100px){
+  .benefit-card.is-prev{transform:translateX(calc(-50% - 250px)) scale(.84)}
+  .benefit-card.is-next{transform:translateX(calc(-50% + 250px)) scale(.84)}
+}
+
+@media (max-width:820px){
+  .photo.hero-frame{border:0;background:transparent}
+  .hero-text br{margin-top:8px}
+  .carousel-wrap{min-height:520px;overflow:hidden}
+  .benefit-track{height:400px}
   .benefit-card,
-  .benefit-card.is-active,
   .benefit-card.is-prev,
-  .benefit-card.is-next {
-    position: absolute;
-    width: 100%;
-    max-width: 360px;
-    opacity: 0;
-    transform: translateX(0) scale(.9);
+  .benefit-card.is-next,
+  .benefit-card.is-hidden{
+    width:100%;
+    max-width:360px;
+    left:50%;
+    opacity:0;
+    transform:translateX(-50%) scale(.92);
   }
-
-  .benefit-card.is-active {
-    opacity: 1;
-    transform: translateX(0) scale(1);
+  .benefit-card.is-active{
+    opacity:1;
+    transform:translateX(-50%) scale(1);
   }
-
-  .vehicle-title.small {
-  font-size: 42px;
-  line-height: 1.05;
+  .carousel-bg.top,
+  .carousel-bg.bottom{left:0;right:0}
+  .carousel-controls{bottom:38px}
+  .vehicle-card,
+  .vehicle-card.featured{min-height:auto}
+  .vehicle-card h3,
+  .vehicle-card.featured h3{font-size:42px;min-height:auto}
+  .vehicle-card h3.vehicle-title-small{font-size:34px}
 }
 
-  .vehicle-card h3,
-  .vehicle-card.featured h3 {
-    font-size: 36px;
-  }
+@media (max-width:520px){
+  .vehicle-card h3.vehicle-title-small{font-size:32px}
+  .vehicle-card .btn{width:100%}
 }
