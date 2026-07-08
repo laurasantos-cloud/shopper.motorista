@@ -42,6 +42,11 @@ a{color:inherit}
   border-color: #5bc39f;
 }
 
+.hero-photo.frame {
+  border: 10px solid #e5e5e5;
+  background: #e5e5e5;
+}
+
 .green-note {
   color: #5bc39f;
 }
