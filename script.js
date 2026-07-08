@@ -35,16 +35,20 @@ function visibleCount(){
 }
 
 function updateCarousel(){
-  const count = visibleCount();
-  cards.forEach((card, index) => card.classList.toggle('is-active', index === active));
-  if (count === 1) {
-    track.style.transform = `translateX(-${active * 100}%)`;
-  } else {
-    const width = cards[0].getBoundingClientRect().width;
-    const gap = 18;
-    const offsetIndex = Math.max(0, Math.min(active - 1, cards.length - 3));
-    track.style.transform = `translateX(-${offsetIndex * (width + gap)}px)`;
-  }
+  const total = cards.length;
+
+  cards.forEach((card, index) => {
+    card.classList.remove('is-active', 'is-prev', 'is-next');
+
+    const prevIndex = (active - 1 + total) % total;
+    const nextIndex = (active + 1) % total;
+
+    if (index === active) card.classList.add('is-active');
+    if (index === prevIndex) card.classList.add('is-prev');
+    if (index === nextIndex) card.classList.add('is-next');
+  });
+
+  track.style.transform = 'none';
 }
 
 function go(direction){
