@@ -347,13 +347,16 @@ a{color:inherit}
 }
 
 .block-c{
-  top:64px;
-  height:312px;
+    top:60px;
+    right:8px;
+    height:325px;
 }
 
 .block-d{
-  top:326px;
-  height:78px;
+    top:345px;
+    right:8px;
+    width:250px;
+    height:78px;
 }
 
 /* Sobe as duas fotos centrais e mantém uma distância confortável das imagens inferiores. */
