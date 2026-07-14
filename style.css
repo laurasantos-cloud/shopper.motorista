@@ -290,7 +290,7 @@ a{color:inherit}
   box-shadow:0 18px 32px rgba(0,0,0,.12);
 }
 .photo-2{
-  left:118px;
+  left:128px;
   top:185px;
   width:150px;
   height:210px;
@@ -307,8 +307,8 @@ a{color:inherit}
 .photo-4{
   width:118px;
   height:148px;
-  right:28px;
-  top:14px;
+  right:8px;
+  top:22px;
   object-fit:cover;
   object-position:center;
 }
