@@ -36,7 +36,13 @@ a{color:inherit}
 @media (max-width:520px){.header-inner{height:74px}.logo{width:132px}.main-nav{top:84px}.hero{padding:52px 0 66px}.hero h1{font-size:44px}.intro{font-size:18px}.hero-text{font-size:22px}.btn-main{width:100%;max-width:330px}.section{padding:62px 0}h2{font-size:42px}.requirements h2{font-size:44px}.card-title{gap:16px;margin-bottom:26px}.card-title h3{font-size:26px}.info-card p{font-size:22px}.green-note{font-size:19px}.benefits h2{font-size:41px}.benefit-card{padding:40px 30px;min-height:390px}.vehicle-card h3,.vehicle-card.featured h3{font-size:40px}.footer h2{font-size:29px}.footer-logo{width:130px}}
 @media (max-width:380px){.hero h1{font-size:38px}.hero-text{font-size:20px}h2{font-size:36px}.requirements h2{font-size:38px}.info-card p{font-size:20px}.benefits h2{font-size:35px}.benefit-card h3{font-size:22px}.benefit-card p{font-size:19px}.vehicle-card h3,.vehicle-card.featured h3{font-size:34px}}
 
-/* Ajustes v3 - revisao fina */
+
+/* =========================================================
+   AJUSTES FINAIS DO PROJETO
+   Este bloco substitui as revisoes antigas e concentra
+   os ajustes de cor, cards, carrossel, WhatsApp e hero.
+   ========================================================= */
+
 :root{
   --green-light:#5bc39f;
 }
@@ -58,27 +64,93 @@ a{color:inherit}
   margin-top:10px;
 }
 
-.photo.hero-frame{
-  border:8px solid #f0f0f0;
-  background:#f0f0f0;
+/* ---------------------------------------------------------
+   HERO — mapa das imagens
+   photo-1: foto superior esquerda
+   photo-2: foto central esquerda
+   photo-3: van inferior esquerda
+   photo-4: foto superior direita
+   photo-5: foto central direita
+   photo-6: van inferior direita
+   --------------------------------------------------------- */
+
+/* Blocos verdes da esquerda */
+.block-a{
+  width:178px;
+  height:96px;
+  left:92px;
+  top:90px;
 }
 
+.block-b{
+  width:182px;
+  height:228px;
+  left:86px;
+  top:218px;
+}
+
+/* Blocos verdes da direita */
+.block-c{
+  width:124px;
+  height:320px;
+  right:20px;
+  top:64px;
+  background:#048f79;
+}
+
+.block-d{
+  width:260px;
+  height:78px;
+  right:0;
+  top:346px;
+  background:#005241;
+}
+
+.photo{
+  border:0;
+  background:transparent;
+  box-shadow:0 18px 32px rgba(0,0,0,.12);
+}
+
+/* Foto central esquerda: um pouco mais para a direita */
+.photo-2,
 .photo-2.hero-frame{
-  left:118px;
-  top:185px;
+  left:162px;
+  top:170px;
+  width:150px;
+  height:210px;
+  object-fit:cover;
+  object-position:center 35%;
+  border:0 !important;
+  background:transparent !important;
+}
+
+/* Foto superior direita: alinhada horizontalmente com a van */
+.photo-4{
+  width:132px;
+  height:166px;
+  right:-20px;
+  top:18px;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Foto central direita: mais baixa para nao encostar na de cima */
+.photo-5,
+.photo-5.hero-frame{
+  right:85px;
+  top:205px;
   width:150px;
   height:210px;
   object-fit:cover;
   object-position:center;
-  border:8px solid #fff;
-  background:#fff;
+  border:0 !important;
+  background:transparent !important;
 }
 
-.photo-5.hero-frame{
-  right:85px;
-  top:185px;
-}
-
+/* ---------------------------------------------------------
+   VEICULOS
+   --------------------------------------------------------- */
 .vehicle-grid{
   align-items:stretch;
 }
@@ -120,7 +192,8 @@ a{color:inherit}
   flex:1;
 }
 
-.vehicle-card .btn{
+.vehicle-card .btn,
+.vehicle-card .btn-main.small{
   width:210px;
   max-width:100%;
   align-self:center;
@@ -128,11 +201,9 @@ a{color:inherit}
   line-height:1;
 }
 
-.vehicle-card .btn-main.small{
-  width:210px;
-}
-
-/* Beneficios em carrossel com profundidade */
+/* ---------------------------------------------------------
+   BENEFICIOS — carrossel com profundidade
+   --------------------------------------------------------- */
 .carousel-wrap{
   max-width:1040px;
   overflow:visible;
@@ -156,7 +227,7 @@ a{color:inherit}
   opacity:0;
   pointer-events:none;
   transform:translateX(-50%) scale(.75);
-  transition:transform .5s ease, opacity .5s ease, box-shadow .5s ease;
+  transition:transform .5s ease,opacity .5s ease,box-shadow .5s ease;
 }
 
 .benefit-card.is-active{
@@ -200,16 +271,52 @@ a{color:inherit}
   bottom:54px;
 }
 
+/* ---------------------------------------------------------
+   WHATSAPP
+   --------------------------------------------------------- */
+.whatsapp-float{
+  width:64px;
+  height:64px;
+  background:#25D366;
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+}
+
+.whatsapp-float svg{
+  width:34px;
+  height:34px;
+  fill:#fff;
+  display:block;
+}
+
+.whatsapp-float:hover{
+  transform:translateY(-2px);
+  background:#20bd5a;
+}
+
 @media (max-width:1100px){
-  .benefit-card.is-prev{transform:translateX(calc(-50% - 250px)) scale(.84)}
-  .benefit-card.is-next{transform:translateX(calc(-50% + 250px)) scale(.84)}
+  .benefit-card.is-prev{
+    transform:translateX(calc(-50% - 250px)) scale(.84);
+  }
+
+  .benefit-card.is-next{
+    transform:translateX(calc(-50% + 250px)) scale(.84);
+  }
 }
 
 @media (max-width:820px){
-  .photo.hero-frame{border:0;background:transparent}
-  .hero-text br{margin-top:8px}
-  .carousel-wrap{min-height:520px;overflow:hidden}
-  .benefit-track{height:400px}
+  .hero-text br{
+    margin-top:8px;
+  }
+
+  .carousel-wrap{
+    min-height:520px;
+    overflow:hidden;
+  }
+
+  .benefit-track{
+    height:400px;
+  }
+
   .benefit-card,
   .benefit-card.is-prev,
   .benefit-card.is-next,
@@ -220,169 +327,54 @@ a{color:inherit}
     opacity:0;
     transform:translateX(-50%) scale(.92);
   }
+
   .benefit-card.is-active{
     opacity:1;
     transform:translateX(-50%) scale(1);
   }
+
   .carousel-bg.top,
-  .carousel-bg.bottom{left:0;right:0}
-  .carousel-controls{bottom:38px}
+  .carousel-bg.bottom{
+    left:0;
+    right:0;
+  }
+
+  .carousel-controls{
+    bottom:38px;
+  }
+
   .vehicle-card,
-  .vehicle-card.featured{min-height:auto}
+  .vehicle-card.featured{
+    min-height:auto;
+  }
+
   .vehicle-card h3,
-  .vehicle-card.featured h3{font-size:42px;min-height:auto}
-  .vehicle-card h3.vehicle-title-small{font-size:34px}
-}
+  .vehicle-card.featured h3{
+    font-size:42px;
+    min-height:auto;
+  }
 
-@media (max-width:520px){
-  .vehicle-card h3.vehicle-title-small{font-size:32px}
-  .vehicle-card .btn{width:100%}
-}
+  .vehicle-card h3.vehicle-title-small{
+    font-size:34px;
+  }
 
+  .whatsapp-float{
+    width:58px;
+    height:58px;
+  }
 
-/* Ajustes v5 - moldura mais discreta e WhatsApp oficial */
-.photo.hero-frame{
-  border:6px solid #fff;
-  background:#fff;
-  box-shadow:0 14px 28px rgba(0,0,0,.10);
-}
-.photo-2.hero-frame{
-  left:122px;
-  top:192px;
-  width:144px;
-  height:204px;
-  object-fit:cover;
-  object-position:center 35%;
-}
-.photo-5.hero-frame{
-  right:85px;
-  top:185px;
-  width:150px;
-  height:210px;
-}
-.whatsapp-float{
-  width:64px;
-  height:64px;
-  background:#25D366;
-  box-shadow:0 14px 30px rgba(0,0,0,.16);
-}
-.whatsapp-float svg{
-  width:34px;
-  height:34px;
-  fill:#fff;
-  display:block;
-}
-.whatsapp-float:hover{
-  transform:translateY(-2px);
-  background:#20bd5a;
-}
-@media (max-width:820px){
-  .whatsapp-float{width:58px;height:58px}
-  .whatsapp-float svg{width:30px;height:30px}
-}
-
-
-/* Ajustes v6 - fotos do hero sem moldura e foto superior direita maior */
-.photo-2,
-.photo-5{
-  border:0 !important;
-  background:transparent !important;
-  box-shadow:0 18px 32px rgba(0,0,0,.12);
-}
-.photo-2{
-  left:118px;
-  top:185px;
-  width:150px;
-  height:210px;
-  object-fit:cover;
-  object-position:center 35%;
-}
-.photo-5{
-  right:85px;
-  top:185px;
-  width:150px;
-  height:210px;
-  object-fit:cover;
-}
-.photo-4{
-  width:118px;
-  height:148px;
-  right:28px;
-  top:14px;
-  object-fit:cover;
-  object-position:center;
-}
-
-@media (max-width:820px){
-  .photo-4{
-    width:104px;
-    height:132px;
-    right:20px;
-    top:18px;
+  .whatsapp-float svg{
+    width:30px;
+    height:30px;
   }
 }
 
-/* Ajustes v7 - alinhamento final das fotos e blocos do hero */
-/*
-  Estrutura visual:
-  .photo-1 = foto superior esquerda
-  .photo-2 = foto central esquerda
-  .photo-3 = van inferior esquerda
-  .photo-4 = foto superior direita
-  .photo-5 = foto central direita
-  .photo-6 = van inferior direita
-  .block-a / .block-b = blocos verdes da esquerda
-  .block-c / .block-d = blocos verdes da direita
-*/
+@media (max-width:520px){
+  .vehicle-card h3.vehicle-title-small{
+    font-size:32px;
+  }
 
-/* Fecha o pequeno intervalo cinza entre o bloco superior e a foto central esquerda. */
-.block-a{
-  height:96px;
-}
-
-/* Reposiciona e aproxima os blocos inferiores das fotos centrais. */
-.block-b{
-  top:218px;
-  height:228px;
-}
-
-.block-c{
-  top:64px;
-  height:312px;
-}
-
-.block-d{
-  top:326px;
-  height:78px;
-}
-
-/* Sobe as duas fotos centrais e mantém uma distância confortável das imagens inferiores. */
-.photo-2{
-  left:118px;
-  top:170px;
-  width:150px;
-  height:210px;
-  object-fit:cover;
-  object-position:center 35%;
-  border:0 !important;
-  background:transparent !important;
-}
-
-.photo-5{
-  right:85px;
-  top:170px;
-  width:150px;
-  height:210px;
-  object-fit:cover;
-  object-position:center;
-  border:0 !important;
-  background:transparent !important;
-}
-
-/* Garante que nenhuma regra antiga de moldura volte a aparecer. */
-.photo-2.hero-frame,
-.photo-5.hero-frame{
-  border:0 !important;
-  background:transparent !important;
-  box-shadow:0 18px 32px rgba(0,0,0,.12);
+  .vehicle-card .btn{
+    width:100%;
+  }
 }
