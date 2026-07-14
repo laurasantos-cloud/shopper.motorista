@@ -76,14 +76,14 @@ a{color:inherit}
 
 /* Blocos verdes da esquerda */
 .block-a{
-  width:205px;
-  height:110px;
+  width:200px;
+  height:150px;
   left:92px;
   top:90px;
 }
 
 .block-b{
- width:205px;
+ width:200px;
   height:238px;
   left:86px;
   top:218px;
