@@ -115,7 +115,7 @@ a{color:inherit}
 /* Foto central esquerda: um pouco mais para a direita */
 .photo-2,
 .photo-2.hero-frame{
-  left:162px;
+  left:142px;
   top:170px;
   width:150px;
   height:210px;
@@ -377,4 +377,30 @@ a{color:inherit}
   .vehicle-card .btn{
     width:100%;
   }
+}
+
+/* Ajuste final do hero: mover apenas a foto do entregador com celular */
+.photo-2,
+.photo-2.hero-frame{
+  left:148px;
+  top:185px;
+  width:150px;
+  height:210px;
+  object-fit:cover;
+  object-position:center 35%;
+  border:0 !important;
+  background:transparent !important;
+}
+
+/* Restaura a foto do casal para a posicao anterior */
+.photo-5,
+.photo-5.hero-frame{
+  right:85px;
+  top:185px;
+  width:150px;
+  height:210px;
+  object-fit:cover;
+  object-position:center;
+  border:0 !important;
+  background:transparent !important;
 }
