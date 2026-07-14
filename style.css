@@ -321,3 +321,68 @@ a{color:inherit}
     top:18px;
   }
 }
+
+/* Ajustes v7 - alinhamento final das fotos e blocos do hero */
+/*
+  Estrutura visual:
+  .photo-1 = foto superior esquerda
+  .photo-2 = foto central esquerda
+  .photo-3 = van inferior esquerda
+  .photo-4 = foto superior direita
+  .photo-5 = foto central direita
+  .photo-6 = van inferior direita
+  .block-a / .block-b = blocos verdes da esquerda
+  .block-c / .block-d = blocos verdes da direita
+*/
+
+/* Fecha o pequeno intervalo cinza entre o bloco superior e a foto central esquerda. */
+.block-a{
+  height:96px;
+}
+
+/* Reposiciona e aproxima os blocos inferiores das fotos centrais. */
+.block-b{
+  top:218px;
+  height:228px;
+}
+
+.block-c{
+  top:64px;
+  height:312px;
+}
+
+.block-d{
+  top:326px;
+  height:78px;
+}
+
+/* Sobe as duas fotos centrais e mantém uma distância confortável das imagens inferiores. */
+.photo-2{
+  left:118px;
+  top:170px;
+  width:150px;
+  height:210px;
+  object-fit:cover;
+  object-position:center 35%;
+  border:0 !important;
+  background:transparent !important;
+}
+
+.photo-5{
+  right:85px;
+  top:170px;
+  width:150px;
+  height:210px;
+  object-fit:cover;
+  object-position:center;
+  border:0 !important;
+  background:transparent !important;
+}
+
+/* Garante que nenhuma regra antiga de moldura volte a aparecer. */
+.photo-2.hero-frame,
+.photo-5.hero-frame{
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:0 18px 32px rgba(0,0,0,.12);
+}
